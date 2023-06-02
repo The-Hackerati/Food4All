@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
+    navigator.geolocation.getCurrentPosition(function (position) {
       var lat = position.coords.latitude;
       var lng = position.coords.longitude;
 
@@ -37,4 +37,39 @@ document.addEventListener("DOMContentLoaded", function() {
   } else {
     console.log("Geolocation is not supported by this browser.");
   }
+});
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyB-vWKWiTqYfYwjIIcd_1W1_BLSuibzTb4",
+  authDomain: "food4all-427ea.firebaseapp.com",
+  projectId: "food4all-427ea",
+  databaseURL: "https://food4all-427ea-default-rtdb.firebaseio.com",
+  storageBucket: "food4all-427ea.appspot.com",
+  messagingSenderId: "842713498087",
+  appId: "1:842713498087:web:3e5baf4e9a169d0a23bd42"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+const donateBtn = document.getElementById('donate-button');
+// create modal
+// const ListPop = new bootstrap.Modal(document.getElementById('modalEnterFood'))
+
+
+donateBtn.addEventListener('click', function (event) {
+  event.preventDefault();
+  onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      window.alert("You are not login. Please login or create an account to continue.");
+      window.location.href = "res/signup.html";
+    }
+    else{
+      window.alert("You can safely donate now.");
+      window.location.href = "res/donate.html";
+    }    
+  });
 });

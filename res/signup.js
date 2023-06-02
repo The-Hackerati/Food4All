@@ -64,7 +64,7 @@ registerBtn.addEventListener('click', function (event) {
                 const user = result.user;
 
                 const reference = ref(db, "users/" + user.uid);
-                window.alert("User registered successfully");
+                // window.alert("User registered successfully");
                 set(reference, {
                     name: name,
                     email: email,
@@ -74,7 +74,7 @@ registerBtn.addEventListener('click', function (event) {
                     .then(() => {
                         // signOut(auth)
                         window.alert("User registered successfully and data gets written to the database");
-                        // window.location.href = "./../index.html";
+                        window.location.href = "./../index.html";
                     })
                     .catch((error) => {
                         const errorCode = error.code;
