@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donation Listing</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <style>
         body {
             display: flex;
@@ -19,42 +20,23 @@
             padding: 30px;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: relative;
         }
 
-        .logo {
-            position: absolute;
-            top: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background-color: #fff;
-            border: 2px solid #ccc;
-            overflow: hidden;
-        }
-
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        #map {
+            height: 300px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">
-            <img src="/assets/logo.jpg" alt="Logo">
-        </div>
+        <div id="map"></div>
+
         <form action="/index.html">
+
             <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Your name..">
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone</label>
-                <input type="text" class="form-control" id="phone" name="phone" placeholder="Your phone number..">
+                <label for="number">Phone</label>
+                <input type="text" class="form-control" id="number" name="phone" placeholder="Your phone number..">
             </div>
             <div class="form-group">
                 <label for="address">Address</label>
@@ -70,12 +52,15 @@
             </div>
             <div class="form-group">
                 <label for="expiry">Expiry</label>
-                <input type="text" class="form-control" id="expiry" name="expiry" placeholder="Your expiry..">
+                <input type="text" class="form-control" id="expiry" name="expiry" placeholder="Food expiry..">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button class="btn btn-primary" id="submit-button">Submit</button>
         </form>
     </div>
     
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSveNwWsrMaVOoeJhdzfeX9PvjHt4cHHU&callback=initMap" async defer></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="module" src ="donate.js"></script>
+
 </body>
 </html>
