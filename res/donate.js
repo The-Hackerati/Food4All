@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged  } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 import {
     getDatabase,
     ref,
@@ -116,35 +116,72 @@ submitBtn.addEventListener("click", function () {
     event.preventDefault();
     const number = document.getElementById("number").value;
     const address = document.getElementById("address").value;
-    // const pinLat = document.getElementById("pinLat").value;
-    // const pinLng = document.getElementById("pinLng").value;
     const food = document.getElementById("food").value;
     const quantity = document.getElementById("quantity").value;
     const expiry = document.getElementById("expiry").value;
 
-    onAuthStateChanged(auth, (user) => {
-        // const user = result.user;
-        const reference = ref(db, "listings/" + user.uid);
-        // window.alert("User registered successfully");
-        set(reference, {
-            number: number,
-            address: address,
-            pinLat: pinLat,
-            pinLng: pinLng,
-            food: food,
-            quantity: quantity,
-            expiry: expiry,
-            time_added: Date.now(),
-        })
-            .then(() => {
-                window.alert("listings added successfully");
+    var isVerified = true;
+    if (validate_field(number) == false || validate_field(food) == false || validate_field(quantity) == false ||  validate_field(expiry) == false){
+        window.alert("Please fill all the fields");
+        isVerified = false;
+        return;
+    }
+    if (validate_field(address) == false) {
+        window.alert("Please pin your location on the map");
+        isVerified = false;
+        return;
+    }
+    if (!validate_phoneNum(phoneNo)) {
+        window.alert("Invalid phone number");
+        isVerified = false;
+        return;
+    }
+
+    if (isVerified) {
+        onAuthStateChanged(auth, (user) => {
+            // const user = result.user;
+            const reference = ref(db, "listings/" + user.uid);
+            // window.alert("User registered successfully");
+            set(reference, {
+                number: number,
+                address: address,
+                pinLat: pinLat,
+                pinLng: pinLng,
+                food: food,
+                quantity: quantity,
+                expiry: expiry,
+                time_added: Date.now(),
             })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorCode + " " + errorMessage);
-                window.alert("Error: " + errorMessage);
-            });
-    });
+                .then(() => {
+                    window.alert("listings added successfully");
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.log(errorCode + " " + errorMessage);
+                    window.alert("Error: " + errorMessage);
+                });
+        });
+    }
 
 })
+
+function validate_field(field) {
+    if (field == null) {
+        return false;
+    }
+    if (field.length <= 0) {
+        return false
+    }
+    else {
+        return true;
+    }
+}
+function validate_phoneNum(phoneNo) {
+    var expression = /^\d{10}$/;
+    if (expression.test(phoneNo) == true) {
+        return true;
+    } else {
+        return false;
+    }
+}

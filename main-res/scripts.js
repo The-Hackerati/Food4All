@@ -3,11 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
     navigator.geolocation.getCurrentPosition(function (position) {
       var lat = position.coords.latitude;
       var lng = position.coords.longitude;
-
+      
       var map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: lat, lng: lng },
         zoom: 15
       });
+      map.setOptions({ zoomControl: false, streetViewControl: false});
 
       var marker = new google.maps.Marker({
         position: { lat: lat, lng: lng },
