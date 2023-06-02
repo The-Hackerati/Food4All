@@ -1,6 +1,8 @@
 // Initialize and add the map
 let map;
+function initMap() {
 
+}
 // async function initMap() {
 //   // The location of Vellore
 //   const position = { lat: 12.934, lng: 79.146 };
@@ -25,12 +27,14 @@ let map;
 // }
 //async function initMap(){
 document.addEventListener("DOMContentLoaded", function() {
+//   const { Map } = await google.maps.importLibrary("maps");
+//   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var lat = position.coords.latitude;
       var lng = position.coords.longitude;
 
-      var map = new google.maps.Map(document.getElementById("map"), {
+      map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: lat, lng: lng },
         zoom: 15
       });
