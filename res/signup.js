@@ -11,6 +11,7 @@ const firebaseConfig = {
     apiKey: "AIzaSyB-vWKWiTqYfYwjIIcd_1W1_BLSuibzTb4",
     authDomain: "food4all-427ea.firebaseapp.com",
     projectId: "food4all-427ea",
+    databaseURL: "https://food4all-427ea-default-rtdb.firebaseio.com",
     storageBucket: "food4all-427ea.appspot.com",
     messagingSenderId: "842713498087",
     appId: "1:842713498087:web:3e5baf4e9a169d0a23bd42"
