@@ -21,3 +21,8 @@ height: 100%;
     box-shadow: 0 0 10px 0 rgb(62 28 131 / 25%);
 
 }
+.form {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
