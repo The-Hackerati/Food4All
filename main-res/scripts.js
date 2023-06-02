@@ -23,8 +23,8 @@ let map;
 //     title: "Uluru",
 //   });
 // }
-async function initMap(){
-// document.addEventListener("DOMContentLoaded", function() {
+//async function initMap(){
+document.addEventListener("DOMContentLoaded", function() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var lat = position.coords.latitude;
@@ -63,7 +63,6 @@ async function initMap(){
   } else {
     console.log("Geolocation is not supported by this browser.");
   }
-// });
-}
-
-initMap();
+});
+//}
+//initMap();
