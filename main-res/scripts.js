@@ -1,40 +1,10 @@
-// Initialize and add the map
-let map;
-function initMap() {
-
-}
-// async function initMap() {
-//   // The location of Vellore
-//   const position = { lat: 12.934, lng: 79.146 };
-//   // Request needed libraries.
-//   //@ts-ignore
-//   const { Map } = await google.maps.importLibrary("maps");
-//   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
-
-//   // The map, centered at Uluru
-//   map = new Map(document.getElementById("map"), {
-//     zoom: 14,
-//     center: position,
-//     mapId: "DEMO_MAP_ID",
-//   });
-
-//   // The marker, positioned at Uluru
-//   const marker = new AdvancedMarkerElement({
-//     map: map,
-//     position: position,
-//     title: "Uluru",
-//   });
-// }
-//async function initMap(){
 document.addEventListener("DOMContentLoaded", function() {
-//   const { Map } = await google.maps.importLibrary("maps");
-//   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var lat = position.coords.latitude;
       var lng = position.coords.longitude;
 
-      map = new google.maps.Map(document.getElementById("map"), {
+      var map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: lat, lng: lng },
         zoom: 15
       });
@@ -68,5 +38,3 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("Geolocation is not supported by this browser.");
   }
 });
-//}
-//initMap();

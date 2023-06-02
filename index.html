@@ -2,50 +2,51 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food4All</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="main-res/styles.css">
-    <script type="module" src="main-res/scripts.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food4All</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="main-res/styles.css">
+
 </head>
 
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
-    <div class="container-fluid whole p-0 m-0">
-        <div class="row gx-0">
-            <!-- map div -->
-            <div class="col-md-9 col-lg-9 order-md-2 order-lg-2">
-                <div id="map"></div>
-                <a href="res/signup.html" class="btn btn-primary position-fixed bottom-0 end-0 m-3" role="button">Donate</a>
-            </div>
-            <!-- selector div -->
-            <div class="col-md-3 col-lg-3 order-md-1 order-lg-1">
-                <!-- inside objects -->
-                <div class="row gx-2 p-1 m-1 col-9">
-                    <!-- search bar  -->
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search" aria-describedby="button-addon">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon"><i
-                                class="bi bi-search"></i></button>
-                    </div>
-                    <!-- user button -->
-                    <div class="row col-2">
-                        <button type="button" class="btn btn-default btn-circle"><i class="bi bi-person"></i></button>
-                    </div>
-                    <!-- <div class="box"></div> -->
-                </div>
-        </div>
-    </div>
-    <!-- prettier-ignore -->
-    <script>(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })
-        ({ key: "AIzaSyBSveNwWsrMaVOoeJhdzfeX9PvjHt4cHHU", v: "beta" });</script>
-</body>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+  <div class="container-fluid whole p-0 m-0">
+    <div class="row gx-0">
+      <!-- map div -->
+      <div class="col-md-9 col-lg-9 order-md-2 order-lg-2">
+        <div id="map"></div>
+        <a href="res/signup.html" class="btn btn-primary position-fixed bottom-0 end-0 m-3" role="button">Donate</a>
+      </div>
+      <!-- selector div -->
+      <div class="col-md-3 col-lg-3 order-md-1 order-lg-1">
+        <!-- inside objects -->
+        <div class="row gx-2 p-1 m-1 col-9">
+          <!-- search bar  -->
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search" aria-describedby="button-addon">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon"><i
+                class="bi bi-search"></i></button>
+          </div>
+          <!-- user button -->
+          <div class="row col-2">
+            <button type="button" class="btn btn-default btn-circle"><i class="bi bi-person"></i></button>
+          </div>
+          <!-- <div class="box"></div> -->
+        </div>
+      </div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSveNwWsrMaVOoeJhdzfeX9PvjHt4cHHU&libraries=places"></script>
+    <script src="main-res/scripts.js"></script>
+
+</body>
 </html>
