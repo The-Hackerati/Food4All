@@ -31,13 +31,24 @@
             map: map,
             title: "Your Location",
             icon: {
-                path: google.maps.SymbolPath.CIRCLE,
-                scale: 10,
-                fillColor: "#4285F4",
-                fillOpacity: 1,
-                strokeColor: "#ffffff",
-                strokeWeight: 5
+              path: google.maps.SymbolPath.CIRCLE,
+              scale: 10,
+              fillColor: "#4285F4",
+              fillOpacity: 1,
+              strokeColor: "#ffffff",
+              strokeWeight: 2
             }
+          });
+
+          var circle = new google.maps.Circle({
+            strokeColor: "#4285F4",
+            strokeOpacity: 0.3,
+            strokeWeight: 2,
+            fillColor: "#4285F4",
+            fillOpacity: 0.2,
+            map: map,
+            center: { lat: lat, lng: lng },
+            radius: 100 // Adjust the radius as needed
           });
         });
       } else {
