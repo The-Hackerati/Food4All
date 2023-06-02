@@ -1,9 +1,8 @@
 /* temp  */
 .box {
     height: 100%;
-    background: lightcoral;
-    border: 1px solid green;
-    margin: 1px;
+    /* background: lightcoral; */
+    background: #fdfdfd;
   }
 
   html, body {
