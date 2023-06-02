@@ -34,12 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
         radius: 80 // Adjust the radius as needed
       });
 
-      // Function to fetch addresses from Firebase and create markers
+      // Fetch addresses from Firebase and create markers
       function fetchAddressesAndCreateMarkers(map) {
         const database = getDatabase(app);
         const listingsRef = ref(database, "listings");
 
-        // Listen for changes in the listings data
+        // Listen for changes
         onValue(listingsRef, (snapshot) => {
           // Clear existing markers
           markers.forEach((marker) => {
@@ -68,9 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
 
-      var markers = []; // Array to store the markers
-
-      // Fetch addresses from the database and create markers
+      var markers = [];
       fetchAddressesAndCreateMarkers(map);
     });
   } else {
@@ -114,35 +112,3 @@ donateBtn.addEventListener('click', function (event) {
     }    
   });
 });
-
-// function fetchAddressesAndCreateMarkers(map) {
-//   const addressesRef = ref(database, "listings");
-  
-//   // Listen for changes in the addresses data
-//   onValue(addressesRef, (snapshot) => {
-//     // Clear existing markers
-//     markers.forEach((marker) => {
-//       marker.setMap(null);
-//     });
-//     markers = [];
-
-//     // Get all the addresses
-//     const addresses = snapshot.val();
-
-//     // Iterate over the addresses and create markers on the map
-//     for (const key in addresses) {
-//       const address = addresses[key];
-//       const latLng = new google.maps.LatLng(address.lat, address.lng);
-      
-//       // Create a marker for each address
-//       const marker = new google.maps.Marker({
-//         position: latLng,
-//         map: map,
-//         title: address.title
-//       });
-
-//       // Add the marker to the markers array
-//       markers.push(marker);
-//     }
-//   });
-// }

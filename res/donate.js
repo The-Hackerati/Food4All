@@ -2,10 +2,9 @@ var pinLat = "";
 var pinLng = "";
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Declare variables to store pin location
     var pinAddress;
 
-    // Function to geocode the coordinates and get the address
+    // Fn to geocode the coordinates and get the address
     function geocodeLatLng(lat, lng) {
         var geocoder = new google.maps.Geocoder();
         var latLng = new google.maps.LatLng(lat, lng);
@@ -14,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (status == google.maps.GeocoderStatus.OK) {
                 if (results[0]) {
                     pinAddress = results[0].formatted_address;
-                    // Autofill the address field
+                    // Autofill the address field - needs testing
                     document.getElementById("address").value = pinAddress;
                 } else {
                     window.alert("No address found for this location.");
@@ -57,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 fillOpacity: 0.2,
                 map: map,
                 center: { lat: lat, lng: lng },
-                radius: 80 // Adjust the radius as needed
+                radius: 80
             });
             // Add click event listener to map
             map.addListener("click", function (event) {
@@ -80,26 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Geocode the coordinates to get the address
                 geocodeLatLng(pinLat, pinLng);
             });
-
-            // Add button click event listener to save pin location
-            // var saveBtn = document.getElementById("save-button");
-            // saveBtn.addEventListener("click", function () {
-            //     // Check if pin location is available
-            //     if (pinLat && pinLng) {
-            //         // Save the pin location using Firebase
-            //         var pinRef = firebase.database().ref("pins").push();
-            //         pinRef.set({
-            //             latitude: pinLat,
-            //             longitude: pinLng
-            //         }).then(function () {
-            //             window.alert("Pin location saved successfully!");
-            //         }).catch(function (error) {
-            //             window.alert("Failed to save pin location: " + error.message);
-            //         });
-            //     } else {
-            //         window.alert("No pin location available to save!");
-            //     }
-            // });
         });
     } else {
         console.log("Geolocation is not supported by this browser.");
@@ -167,7 +146,5 @@ submitBtn.addEventListener("click", function () {
                 window.alert("Error: " + errorMessage);
             });
     });
-
-
 
 })
