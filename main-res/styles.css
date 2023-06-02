@@ -24,3 +24,12 @@
     height: 100%; /* The height is 400 pixels */
     width: 100%; /* The width is the width of the web page */
 }
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
+}
