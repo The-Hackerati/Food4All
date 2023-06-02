@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
     navigator.geolocation.getCurrentPosition(function (position) {
       var lat = position.coords.latitude;
       var lng = position.coords.longitude;
-      
+
       var map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: lat, lng: lng },
         zoom: 15
       });
-      map.setOptions({ zoomControl: false, streetViewControl: false});
+      map.setOptions({ zoomControl: false, streetViewControl: false });
 
       var marker = new google.maps.Marker({
         position: { lat: lat, lng: lng },
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
-import { getDatabase, ref, set, onValue} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 
 const firebaseConfig = {
@@ -107,9 +107,9 @@ donateBtn.addEventListener('click', function (event) {
       window.alert("You are not login. Please login or create an account to continue.");
       window.location.href = "res/signup.html";
     }
-    else{
+    else {
       window.alert("You can safely donate now.");
       window.location.href = "res/donate.html";
-    }    
+    }
   });
 });
