@@ -1,6 +1,9 @@
+var pinLat = "";
+var pinLng = "";
+
 document.addEventListener("DOMContentLoaded", function () {
     // Declare variables to store pin location
-    var pinLat, pinLng, pinAddress;
+    var pinAddress;
 
     // Function to geocode the coordinates and get the address
     function geocodeLatLng(lat, lng) {
@@ -147,8 +150,8 @@ submitBtn.addEventListener("click", function () {
         set(reference, {
             number: number,
             address: address,
-            // pinLat: pinLat,
-            // pinLng: pinLng,
+            pinLat: pinLat,
+            pinLng: pinLng,
             food: food,
             quantity: quantity,
             expiry: expiry,

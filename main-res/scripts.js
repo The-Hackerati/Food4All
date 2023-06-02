@@ -33,14 +33,56 @@ document.addEventListener("DOMContentLoaded", function () {
         center: { lat: lat, lng: lng },
         radius: 80 // Adjust the radius as needed
       });
+
+      // Function to fetch addresses from Firebase and create markers
+      function fetchAddressesAndCreateMarkers(map) {
+        const database = getDatabase(app);
+        const listingsRef = ref(database, "listings");
+
+        // Listen for changes in the listings data
+        onValue(listingsRef, (snapshot) => {
+          // Clear existing markers
+          markers.forEach((marker) => {
+            marker.setMap(null);
+          });
+          markers = [];
+
+          // Get all the listings
+          const listings = snapshot.val();
+
+          // Iterate over the listings and create markers on the map
+          for (const userId in listings) {
+            const listing = listings[userId];
+            const latLng = new google.maps.LatLng(listing.pinLat, listing.pinLng);
+
+            // Create a marker for each listing address
+            const marker = new google.maps.Marker({
+              position: latLng,
+              map: map,
+              title: listing.address
+            });
+
+            // Add the marker to the markers array
+            markers.push(marker);
+          }
+        });
+      }
+
+      var markers = []; // Array to store the markers
+
+      // Fetch addresses from the database and create markers
+      fetchAddressesAndCreateMarkers(map);
     });
   } else {
     console.log("Geolocation is not supported by this browser.");
   }
+  fetchAddressesAndCreateMarkers(map);
 });
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+import { getDatabase, ref, set, onValue} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyB-vWKWiTqYfYwjIIcd_1W1_BLSuibzTb4",
@@ -54,11 +96,10 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const database = getDatabase(app);
+
 
 const donateBtn = document.getElementById('donate-button');
-// create modal
-// const ListPop = new bootstrap.Modal(document.getElementById('modalEnterFood'))
-
 
 donateBtn.addEventListener('click', function (event) {
   event.preventDefault();
@@ -73,3 +114,35 @@ donateBtn.addEventListener('click', function (event) {
     }    
   });
 });
+
+// function fetchAddressesAndCreateMarkers(map) {
+//   const addressesRef = ref(database, "listings");
+  
+//   // Listen for changes in the addresses data
+//   onValue(addressesRef, (snapshot) => {
+//     // Clear existing markers
+//     markers.forEach((marker) => {
+//       marker.setMap(null);
+//     });
+//     markers = [];
+
+//     // Get all the addresses
+//     const addresses = snapshot.val();
+
+//     // Iterate over the addresses and create markers on the map
+//     for (const key in addresses) {
+//       const address = addresses[key];
+//       const latLng = new google.maps.LatLng(address.lat, address.lng);
+      
+//       // Create a marker for each address
+//       const marker = new google.maps.Marker({
+//         position: latLng,
+//         map: map,
+//         title: address.title
+//       });
+
+//       // Add the marker to the markers array
+//       markers.push(marker);
+//     }
+//   });
+// }
