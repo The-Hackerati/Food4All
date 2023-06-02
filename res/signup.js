@@ -1,5 +1,11 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+import {
+    getDatabase,
+    ref,
+    set,
+} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyB-vWKWiTqYfYwjIIcd_1W1_BLSuibzTb4",
@@ -13,18 +19,19 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const provider = new GoogleAuthProvider();
+const db = getDatabase();
 
 const registerBtn = document.getElementById('register-button');
 const loginBtn = document.getElementById('login-button');
 
 registerBtn.addEventListener('click', function (event) {
-    //   event.preventDefault();
+    event.preventDefault();
     const email = document.getElementById('email').value;
     const name = document.getElementById('name').value;
     const phoneNo = document.getElementById('number').value;
     const checkbox = document.getElementById('checkbox');
 
-    var isVerified = true; 
+    var isVerified = true;
 
     if (validate_field(name) == false || validate_field(phoneNo) == false) {
         window.alert("Please fill all the fields");
@@ -47,7 +54,7 @@ registerBtn.addEventListener('click', function (event) {
         return;
     }
 
-    
+
     if (isVerified) {
         signInWithPopup(auth, provider)
             .then((result) => {
@@ -55,10 +62,26 @@ registerBtn.addEventListener('click', function (event) {
                 const token = credential.accessToken;
                 const user = result.user;
 
-                
+                const reference = ref(db, "users/" + user.uid);
+                set(reference, {
+                    name: name,
+                    email: email,
+                    phoneNo: phoneNo,
+                    last_login: Date.now(),
+                })
+                    .then(() => {
+                        // signOut(auth)
+                        window.alert("User registered successfully");
+                        window.location.href = "./../index.html";
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        console.log(errorCode + " " + errorMessage);
+                        window.alert("Error: " + errorMessage);
+                    });
 
-                window.alert("User registered successfully");
-                window.location.href = "./../index.html";
+
             }).catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
@@ -69,6 +92,7 @@ registerBtn.addEventListener('click', function (event) {
 });
 
 loginBtn.addEventListener('click', function (event) {
+    event.preventDefault();
     signInWithPopup(auth, provider)
         .then((result) => {
             const credential = GoogleAuthProvider.credentialFromResult(result);
