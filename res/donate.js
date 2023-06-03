@@ -152,7 +152,8 @@ submitBtn.addEventListener("click", function (event) {
             })
                 .then(() => {
                     window.alert("listings added successfully");
-                    window.location.href = "./../index.html";
+                    // window.location.href = "./../index.html";
+                    window.close();
                 })
                 .catch((error) => {
                     const errorCode = error.code;

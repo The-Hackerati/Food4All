@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fillOpacity: 0.2,
         map: map,
         center: { lat: lat, lng: lng },
-        radius: 80 
+        radius: 80
       });
 
       // Fetch addresses from Firebase and create markers
@@ -109,7 +109,11 @@ donateBtn.addEventListener('click', function (event) {
     }
     else {
       window.alert("You can safely donate now.");
-      window.location.href = "res/donate.html";
+      // window.location.href = "res/donate.html";
+      //  "width=" + width + ",height=" + height
+
+      window.open("res/donate.html", "Donata", "width=900,height=800,scrollbars=yes");
+
     }
   });
 });
@@ -130,6 +134,13 @@ function fetchListingsAndCreateItems() {
     // Iterate over the listings and create listing items
     for (const userId in listings) {
       const listing = listings[userId];
+      var formattedExpiry = new Date(listing.expiry).toLocaleString(undefined, {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric'
+      });
 
       // Create listing item HTML
       const listingItem = document.createElement("div");
@@ -140,9 +151,9 @@ function fetchListingsAndCreateItems() {
           <h3><i class="bi bi-geo-alt-fill">  </i>${listing.address}</h3>
           </div>
           <p><i class="bi bi-telephone"></i> <a href=tel:${listing.number}>${listing.number}</a></p>
-          <p><i class="fa-solid fa-plate-utensils"></i> ${listing.food}</p>
-          <p><i class="bi bi-people"></i> ${listing.quantity}</p>
-          <p><i class="bi bi-stopwatch"></i> ${listing.expiry}</p>
+          <p><i class="fa-solid fa-bell-concierge"></i> ${listing.food}</p>
+          <p><i class="bi bi-people"></i> ${listing.quantity} servings</p>
+          <p><i class="bi bi-stopwatch"></i> ${formattedExpiry}</p>
         </div>
       `;
 
