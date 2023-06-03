@@ -39,3 +39,43 @@
 .gm-style-mtc:first-child {
   display: none;
 }
+
+/* Left pane independent scroll */
+.left-pane {
+  overflow-y: auto;
+  height: 100vh;
+}
+
+/* Listings style */
+.top-bar {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1;
+}
+.listing-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.listing-icon {
+  margin-right: 10px;
+  color: #4285F4;
+  cursor: pointer;
+}
+
+.listing-details {
+  flex: 1;
+}
+
+.listing-details h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.listing-details p {
+  margin: 5px 0;
+  font-size: 14px;
+}

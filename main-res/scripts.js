@@ -113,3 +113,56 @@ donateBtn.addEventListener('click', function (event) {
     }
   });
 });
+
+// Fetch listings from Firebase and create listing items
+function fetchListingsAndCreateItems() {
+  const database = getDatabase(app);
+  const listingsRef = ref(database, "listings");
+
+  // Listen for changes
+  onValue(listingsRef, (snapshot) => {
+    const listingsContainer = document.getElementById("listings-container");
+    listingsContainer.innerHTML = ""; // Clear existing listing items
+
+    // Get all the listings
+    const listings = snapshot.val();
+
+    // Iterate over the listings and create listing items
+    for (const userId in listings) {
+      const listing = listings[userId];
+
+      // Create listing item HTML
+      const listingItem = document.createElement("div");
+      listingItem.classList.add("listing-item");
+      listingItem.innerHTML = `
+        <div class="listing-icon">
+          <i class="bi bi-geo-alt-fill"></i>
+        </div>
+        <div class="listing-details">
+          <h3>${listing.address}</h3>
+          <p>Phone: ${listing.phone}</p>
+          <p>Food: ${listing.food}</p>
+          <p>Quantity: ${listing.quantity}</p>
+          <p>Expiry: ${listing.expiry}</p>
+        </div>
+      `;
+
+      // Add event listener to show location on map when clicked
+      const pinIcon = listingItem.querySelector(".listing-icon");
+      pinIcon.addEventListener("click", function () {
+        showLocationOnMap(listing.pinLat, listing.pinLng);
+      });
+
+      // Append the listing item to the container
+      listingsContainer.appendChild(listingItem);
+    }
+  });
+}
+
+// Show location on map
+function showLocationOnMap(lat, lng) {
+  // Code to show the location on the map with the provided lat and lng
+}
+
+// Fetch listings and create listing items
+fetchListingsAndCreateItems();
