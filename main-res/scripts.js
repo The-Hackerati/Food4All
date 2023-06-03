@@ -105,20 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // Center the map on the search location
         map.setCenter({ lat: lat, lng: lng });
 
-        // Add a marker for the search location
-        var marker = new google.maps.Marker({
-          position: { lat: lat, lng: lng },
-          map: map,
-          title: "Search Location",
-          icon: {
-            path: google.maps.SymbolPath.CIRCLE,
-            scale: 10,
-            fillColor: "#FF0000",
-            fillOpacity: 1,
-            strokeColor: "#ffffff",
-            strokeWeight: 2
-          }
-        });
       } else {
         console.error("Geocode was not successful for the following reason: " + status);
       }
