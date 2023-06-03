@@ -112,7 +112,7 @@ const db = getDatabase();
 
 const submitBtn = document.getElementById("submit-button");
 
-submitBtn.addEventListener("click", function () {
+submitBtn.addEventListener("click", function (event) {
     event.preventDefault();
     const number = document.getElementById("number").value;
     const address = document.getElementById("address").value;
@@ -121,7 +121,7 @@ submitBtn.addEventListener("click", function () {
     const expiry = document.getElementById("expiry").value;
 
     var isVerified = true;
-    if (validate_field(number) == false || validate_field(food) == false || validate_field(quantity) == false ||  validate_field(expiry) == false){
+    if ( validate_field(food) == false || validate_field(quantity) == false ||  validate_field(expiry) == false){
         window.alert("Please fill all the fields");
         isVerified = false;
         return;
@@ -131,7 +131,7 @@ submitBtn.addEventListener("click", function () {
         isVerified = false;
         return;
     }
-    if (!validate_phoneNum(phoneNo)) {
+    if (!validate_phoneNum(number)) {
         window.alert("Invalid phone number");
         isVerified = false;
         return;
@@ -162,6 +162,9 @@ submitBtn.addEventListener("click", function () {
                     window.alert("Error: " + errorMessage);
                 });
         });
+    }
+    else{
+        window.alert("error");
     }
 
 })
