@@ -239,7 +239,7 @@ function fetchListingsAndCreateItems() {
         hour: 'numeric',
         minute: 'numeric'
       });
-
+      var map_link = new URL("https://www.google.com/maps/search/?api=1&query=" + listing.address);
       // Create listing item HTML
       const listingItem = document.createElement("div");
       listingItem.classList.add("listing-item");
@@ -251,7 +251,10 @@ function fetchListingsAndCreateItems() {
           <p><i class="bi bi-telephone"></i> <a href=tel:${listing.number}>${listing.number}</a></p>
           <p><i class="fa-solid fa-bell-concierge"></i> ${listing.food}</p>
           <p><i class="bi bi-people"></i> ${listing.quantity} people</p>
-          <p><i class="bi bi-stopwatch"></i> ${formattedExpiry}</p>
+          <div class="d-flex justify-content-between align-items-start">
+            <div><p><i class="bi bi-stopwatch"></i> ${formattedExpiry}</p></div>
+            <div><a target="_blank" href="${map_link}"><i class="fa-regular fa-map-location-dot"></i></a></div>
+          </div>
         </div>
       `;
 
