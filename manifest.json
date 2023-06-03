@@ -2,7 +2,7 @@
   "background_color": "#ffffff",
   "description": "A platform to connect donators and NGOs.",
   "dir": "ltr",
-  "display": "minimal-ui",
+  "display": "standalone",
   "name": "Food4All",
   "orientation": "any",
   "scope": "/",
