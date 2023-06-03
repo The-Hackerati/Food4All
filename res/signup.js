@@ -74,7 +74,7 @@ registerBtn.addEventListener('click', function (event) {
                     .then(() => {
                         // signOut(auth)
                         window.alert("User registered successfully and data gets written to the database");
-                        window.location.href = "donate.html";
+                        window.location.href = "./../index.html";
                     })
                     .catch((error) => {
                         const errorCode = error.code;

@@ -33,11 +33,11 @@
               class="bi bi-person-circle"></i>
           </button>
           <ul class="dropdown-menu" style="z-index: 999;">
-            <li><a class="dropdown-item disabled" href="#">Account info</a></li>
-            <li><a class="dropdown-item" href="#">Log out</a></li>
+            <li><a class="dropdown-item" href="#" id ="user-name"></a></li>
+            <li><a class="dropdown-item" href="#" id="logout-button">Log out</a></li>
           </ul>        
         </div>
-        <button class="btn btn-dark position-fixed bottom-0 end-0 m-3" id="donate-button"><i
+        <button class="btn btn-dark position-fixed bottom-0 end-0 m-3 btn-lg" id="donate-button"><i
             class="bi bi-heart-fill"></i> Donate</button>
       </div>
       <!-- selector div -->
@@ -47,8 +47,8 @@
         <div class="row gx-2 p-2 m-1 col-12 top-bar">
           <!-- search bar  -->
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Search" aria-describedby="button-addon">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon"><i
+            <input type="text" class="form-control" placeholder="Search" aria-describedby="button-addon" id="search-input">
+            <button class="btn btn-dark" type="button" id="button-addon"><i
                 class="bi bi-search "></i></button>
           </div>
         </div>
