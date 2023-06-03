@@ -18,13 +18,25 @@
         .container {
             background-color: #fff;
             padding: 30px;
+            margin-top: 100px; 
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
             .container {
-                margin-top: 100px; 
+                margin: 0;
+                width: 100%;
+                max-width: 100%;
+                padding: 0px; 
+            }
+            .form-group {
+                margin-bottom: 10px;
+                margin: 20px;
+            }
+            #submit-button {
+                margin-bottom: 20px;
+                margin-left: 20px;
             }
         }
 
@@ -32,6 +44,12 @@
             height: 300px;
             margin-bottom: 20px;
         }
+
+        /* hide the map terrain button */
+        .gm-style-mtc:first-child {
+            display: none;
+        }
+        
     </style>
 </head>
 <body>
