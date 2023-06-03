@@ -135,15 +135,14 @@ function fetchListingsAndCreateItems() {
       const listingItem = document.createElement("div");
       listingItem.classList.add("listing-item");
       listingItem.innerHTML = `
-        <div class="listing-icon">
-          <i class="bi bi-geo-alt-fill"></i>
-        </div>
         <div class="listing-details">
-          <h3>${listing.address}</h3>
-          <p>Phone: ${listing.phone}</p>
-          <p>Food: ${listing.food}</p>
-          <p>Quantity: ${listing.quantity}</p>
-          <p>Expiry: ${listing.expiry}</p>
+          <div class="listing-icon">
+          <h3><i class="bi bi-geo-alt-fill"></i>${listing.address}</h3>
+          </div>
+          <p><i class="bi bi-telephone"></i> <a href=tel:${listing.number}>${listing.number}</a></p>
+          <p><i class="fa-solid fa-plate-utensils"></i> ${listing.food}</p>
+          <p><i class="bi bi-people"></i> ${listing.quantity}</p>
+          <p><i class="bi bi-stopwatch"></i> ${listing.expiry}</p>
         </div>
       `;
 

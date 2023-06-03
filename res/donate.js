@@ -123,11 +123,7 @@ submitBtn.addEventListener("click", function (event) {
     const expiry = document.getElementById("expiry").value;
 
     var isVerified = true;
-    if ( validate_field(food) == false || validate_field(quantity) == false ||  validate_field(expiry) == false){
-        window.alert("Please fill all the fields");
-        isVerified = false;
-        return;
-    }
+
     if (validate_field(address) == false) {
         window.alert("Please pin your location on the map");
         isVerified = false;
