@@ -111,7 +111,6 @@ donateBtn.addEventListener('click', function (event) {
       window.alert("You can safely donate now.");
       // window.location.href = "res/donate.html";
       //  "width=" + width + ",height=" + height
-
       window.open("res/donate.html", "Donata", "width=900,height=800,scrollbars=yes");
 
     }
@@ -176,3 +175,5 @@ function showLocationOnMap(lat, lng) {
 
 // Fetch listings and create listing items
 fetchListingsAndCreateItems();
+
+// Button repositioning
