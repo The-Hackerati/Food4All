@@ -1,0 +1,22 @@
+{
+    "name":"Food4All",
+    "short_name":"Food4All",
+    "start_url":"index.html",
+    "display":"standalone",
+    "background_color":"#5900b3",
+    "theme_color":"black",
+    "scope": ".",
+    "description":"This is a PWA tutorial.",
+    "icons":[
+    {
+    "src":"assets/logo.jpg",                     
+    "sizes":"192x192",
+    "type":"assets/jpg"
+    },
+    {
+    "src":"assets/logo.jpg",
+    "sizes":"512x512",
+    "type":"assets/jpg"
+    }
+  ]
+}

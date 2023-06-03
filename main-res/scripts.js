@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         center: { lat: lat, lng: lng },
         zoom: 15
       });
-      map.setOptions({ zoomControl: false, streetViewControl: false });
+      map.setOptions({ zoomControl: false, streetViewControl: false, fullscreenControl: false });
 
       var marker = new google.maps.Marker({
         position: { lat: lat, lng: lng },
@@ -175,5 +175,6 @@ function showLocationOnMap(lat, lng) {
 
 // Fetch listings and create listing items
 fetchListingsAndCreateItems();
+
 
 // Button repositioning
