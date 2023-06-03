@@ -23,6 +23,10 @@
     {
       "src": "assets/logo.ico",
       "type": "image/x-icon"
+    },
+    {
+      "src": "assets/1024.png",
+      "sizes": "1024x1024"
     }
   ],
   "shortcuts": []
