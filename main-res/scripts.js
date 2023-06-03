@@ -253,7 +253,7 @@ function fetchListingsAndCreateItems() {
           <p><i class="bi bi-people"></i> ${listing.quantity} people</p>
           <div class="d-flex justify-content-between align-items-start">
             <div><p><i class="bi bi-stopwatch"></i> ${formattedExpiry}</p></div>
-            <div><a target="_blank" href="${map_link}"><i class="fa-regular fa-map-location-dot"></i></a></div>
+            <div><a target="_blank" href="${map_link}"><i class="bi bi-sign-turn-slight-right-fill" style="font-size: 24px;"></i></a></div>
           </div>
         </div>
       `;
