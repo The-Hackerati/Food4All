@@ -4,9 +4,9 @@
     "start_url":"index.html",
     "display":"standalone",
     "background_color":"#5900b3",
-    "theme_color":"black",
+    "theme_color":"white",
     "scope": ".",
-    "description":"This is a PWA tutorial.",
+    "description":"Platform to connect donors and NGOs.",
     "icons":[
     {
     "src":"assets/logo.jpg",                     
