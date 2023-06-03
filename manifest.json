@@ -1,22 +1,25 @@
 {
-    "name":"Food4All",
-    "short_name":"Food4All",
-    "start_url":"index.html",
-    "display":"standalone",
-    "background_color":"#5900b3",
-    "theme_color":"white",
-    "scope": ".",
-    "description":"Platform to connect donors and NGOs.",
-    "icons":[
+  "background_color": "#ffffff",
+  "description": "A platform to connect donators and NGOs.",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Food4All",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "Food4All",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "categories": [],
+  "screenshots": [],
+  "icons": [
     {
-    "src":"assets/logo.jpg",                     
-    "sizes":"192x192",
-    "type":"assets/jpg"
+      "src": "assets/logo.jpg",
+      "type": "image/x-icon"
     },
     {
-    "src":"assets/logo.jpg",
-    "sizes":"512x512",
-    "type":"assets/jpg"
+      "src": "/logo.ico",
+      "type": "image/x-icon"
     }
-  ]
+  ],
+  "shortcuts": []
 }
