@@ -250,7 +250,7 @@ function fetchListingsAndCreateItems() {
           </div>
           <p><i class="bi bi-telephone"></i> <a href=tel:${listing.number}>${listing.number}</a></p>
           <p><i class="fa-solid fa-bell-concierge"></i> ${listing.food}</p>
-          <p><i class="bi bi-people"></i> ${listing.quantity} servings</p>
+          <p><i class="bi bi-people"></i> ${listing.quantity} people</p>
           <p><i class="bi bi-stopwatch"></i> ${formattedExpiry}</p>
         </div>
       `;
