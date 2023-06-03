@@ -13,6 +13,10 @@
   "screenshots": [],
   "icons": [
     {
+      "src": "assets/logo-512-512.png",
+      "type": "image/png"
+    },
+    {
       "src": "assets/logo.jpg",
       "type": "image/x-icon"
     },
