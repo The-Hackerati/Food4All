@@ -48,10 +48,10 @@
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: #fff;
-  overflow-x: hidden;
-  overflow-y: auto;
+  /* overflow-x: hidden; */
+  /* overflow-y: auto; */
   height: 100vh;
-  position: relative;
+  /* position: relative; */
   z-index: 1;
 }
 
@@ -95,11 +95,26 @@
 .listing-details h3 i {
   margin-right: 8px;
 }
+@media (min-width:768px){
+  .left-pane {
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+  }
+}
 @media (max-width: 768px) {
   #donate-button {
     position: fixed;
     bottom: 15px;
     right: 15px;
     z-index: 999;
+  }
+  .left-pane {
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    /* overflow-x: hidden;
+    overflow-y: auto;
+    position: relative; */
   }
 }
