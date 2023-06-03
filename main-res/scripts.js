@@ -167,12 +167,14 @@ donateBtn.addEventListener('click', function (event) {
 });
 
 
-
 //user name display
 function displayName() {
   onAuthStateChanged(auth, (user) => {
     if (!user) {
       document.getElementById('user-name').innerHTML = "Not logged in";
+      const welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+      welcomeModal.show();
+
     } else {
       document.getElementById('logout-button').innerHTML = "Logout";
       var currentUser = auth.currentUser;
