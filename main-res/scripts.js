@@ -194,7 +194,7 @@ const logoutBtn = document.getElementById('logout-button');
 logoutBtn.addEventListener('click', function (event) {
   onAuthStateChanged(auth, (user) => {
     if (!user) {
-      window.alert("You are not login. Please login or create an account to continue.");
+      // window.alert("You are not login. Please login or create an account to continue.");
       window.location.href = "res/signup.html";
     }
     else {

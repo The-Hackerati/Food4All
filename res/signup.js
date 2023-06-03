@@ -101,7 +101,7 @@ loginBtn.addEventListener('click', function (event) {
             const token = credential.accessToken;
             const user = result.user;
             window.alert("Welcome Back!");
-            // window.location.href = "./../index.html";
+            window.location.href = "./../index.html";
         }).catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
