@@ -34,3 +34,8 @@
   font-size: 12px;
   line-height: 1.42857;
 }
+
+/* hide the map terrain button */
+.gm-style-mtc:first-child {
+  display: none;
+}

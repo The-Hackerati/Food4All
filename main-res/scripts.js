@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         center: { lat: lat, lng: lng },
         zoom: 15
       });
-      map.setOptions({ zoomControl: false, streetViewControl: false });
+      map.setOptions({ zoomControl: false, streetViewControl: false, fullscreenControl: false });
 
       var marker = new google.maps.Marker({
         position: { lat: lat, lng: lng },
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         fillOpacity: 0.2,
         map: map,
         center: { lat: lat, lng: lng },
-        radius: 80 // Adjust the radius as needed
+        radius: 80 
       });
 
       // Fetch addresses from Firebase and create markers
