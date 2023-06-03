@@ -153,11 +153,11 @@ donateBtn.addEventListener('click', function (event) {
   event.preventDefault();
   onAuthStateChanged(auth, (user) => {
     if (!user) {
-      window.alert("You are not login. Please login or create an account to continue.");
+      // window.alert("You are not login. Please login or create an account to continue.");
       window.location.href = "res/signup.html";
     }
     else {
-      window.alert("You can safely donate now.");
+      // window.alert("You can safely donate now.");
       // window.location.href = "res/donate.html";
       //  "width=" + width + ",height=" + height
       window.open("res/donate.html", "Donata", "width=900,height=800,scrollbars=yes");

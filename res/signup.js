@@ -27,7 +27,6 @@ const loginBtn = document.getElementById('login-button');
 
 registerBtn.addEventListener('click', function (event) {
     event.preventDefault();
-    const email = document.getElementById('email').value;
     const name = document.getElementById('name').value;
     const phoneNo = document.getElementById('number').value;
     const checkbox = document.getElementById('checkbox');
@@ -39,11 +38,7 @@ registerBtn.addEventListener('click', function (event) {
         isVerified = false;
         return;
     }
-    if (!validate_email(email)) {
-        window.alert("Invalid email address");
-        isVerified = false;
-        return;
-    }
+
     if (!validate_phoneNum(phoneNo)) {
         window.alert("Invalid phone number");
         isVerified = false;
@@ -67,13 +62,12 @@ registerBtn.addEventListener('click', function (event) {
                 // window.alert("User registered successfully");
                 set(reference, {
                     name: name,
-                    email: email,
                     phoneNo: phoneNo,
                     last_login: Date.now(),
                 })
                     .then(() => {
                         // signOut(auth)
-                        window.alert("User registered successfully and data gets written to the database");
+                        // window.alert("User registered successfully and data gets written to the database");
                         window.location.href = "./../index.html";
                     })
                     .catch((error) => {
@@ -113,15 +107,6 @@ loginBtn.addEventListener('click', function (event) {
 
 
 //validate functions
-function validate_email(email) {
-    var expression = /^[^@]+@\w+(\.\w+)+\w$/;
-    if (expression.test(email) == true) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
 
 function validate_field(field) {
     if (field == null) {

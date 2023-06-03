@@ -151,7 +151,7 @@ submitBtn.addEventListener("click", function (event) {
                 time_added: Date.now(),
             })
                 .then(() => {
-                    window.alert("listings added successfully");
+                    // window.alert("listings added successfully");
                     // window.location.href = "./../index.html";
                     window.close();
                 })
