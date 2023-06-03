@@ -8,9 +8,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: lat, lng: lng },
-        zoom: 15
+        zoom: 15,
+        // hide all controls
+        mapTypeControlOptions: {
+          mapTypeIds: []
+        }
       });
-      map.setOptions({ zoomControl: false, streetViewControl: false, fullscreenControl: false });
+      map.setOptions({ zoomControl: false, streetViewControl: false, fullscreenControl: false, mapTypeControl: false });
 
       var marker = new google.maps.Marker({
         position: { lat: lat, lng: lng },
@@ -125,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
-import { getDatabase, ref, set, onValue,get } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+import { getDatabase, ref, set, onValue, get } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 
 const firebaseConfig = {
@@ -170,6 +174,7 @@ function displayName() {
     if (!user) {
       document.getElementById('user-name').innerHTML = "Not logged in";
     } else {
+      document.getElementById('logout-button').innerHTML = "Logout";
       var currentUser = auth.currentUser;
       var usernameRef = ref(database, 'users/' + currentUser.uid + '/name');
       get(usernameRef)
@@ -184,29 +189,29 @@ function displayName() {
 }
 displayName();
 
-const userBtn = document.getElementById('user-name');
-userBtn.addEventListener('click', function (event) {
+//logout button
+const logoutBtn = document.getElementById('logout-button');
+logoutBtn.addEventListener('click', function (event) {
   onAuthStateChanged(auth, (user) => {
     if (!user) {
       window.alert("You are not login. Please login or create an account to continue.");
       window.location.href = "res/signup.html";
     }
+    else {
+      signOut(auth)
+        .then(() => {
+          // window.location.href = "./../index.html";
+          // window.location.reload(true);
+          window.alert("You have been logged out.");
+          // window.location.href = "res/signup.html";
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
   });
-})
 
 
-//logout button
-const logoutBtn = document.getElementById('logout-button');
-logoutBtn.addEventListener('click', function (event) {
-  signOut(auth)
-    .then(() => {
-      // window.location.href = "./../index.html";
-      // window.location.reload(true);
-      window.alert("You have been logged out.");
-    })
-    .catch((error) => {
-      console.error(error);
-    });
 })
 
 // Fetch listings from Firebase and create listing items
