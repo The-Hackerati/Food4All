@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 zoom: 15
             });
             // Hide unnecessary controls
-            map.setOptions({ zoomControl: false, streetViewControl: false, fullscreenControl: false });
+            map.setOptions({ zoomControl: false, streetViewControl: false });
 
             var marker = new google.maps.Marker({
                 position: { lat: lat, lng: lng },

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
         center: { lat: lat, lng: lng },
         zoom: 15
       });
-      map.setOptions({ zoomControl: false, streetViewControl: false, fullscreenControl: false });
+      map.setOptions({ zoomControl: false, streetViewControl: false });
 
       var marker = new google.maps.Marker({
         position: { lat: lat, lng: lng },
@@ -137,7 +137,7 @@ function fetchListingsAndCreateItems() {
       listingItem.innerHTML = `
         <div class="listing-details">
           <div class="listing-icon">
-          <h3><i class="bi bi-geo-alt-fill"></i>${listing.address}</h3>
+          <h3><i class="bi bi-geo-alt-fill">  </i>${listing.address}</h3>
           </div>
           <p><i class="bi bi-telephone"></i> <a href=tel:${listing.number}>${listing.number}</a></p>
           <p><i class="fa-solid fa-plate-utensils"></i> ${listing.food}</p>
