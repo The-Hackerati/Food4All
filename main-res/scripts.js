@@ -163,6 +163,7 @@ donateBtn.addEventListener('click', function (event) {
 });
 
 
+
 //user name display
 function displayName() {
   onAuthStateChanged(auth, (user) => {
@@ -182,6 +183,16 @@ function displayName() {
   });
 }
 displayName();
+
+const userBtn = document.getElementById('user-name');
+userBtn.addEventListener('click', function (event) {
+  onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      window.alert("You are not login. Please login or create an account to continue.");
+      window.location.href = "res/signup.html";
+    }
+  });
+})
 
 
 //logout button
