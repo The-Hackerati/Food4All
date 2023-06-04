@@ -6,7 +6,8 @@ Additionally, this platform can facilitate partnerships with NGOs, further enhan
 Simply drop a pin on our interactive map, providing essential details such as the quantity, type of item, and additional relevant information. This information is then readily available to other users who are eager to distribute these resources to those in need.
 
 ## Technology Usesd
-PWA App, Google Maps API, JavaScript, Firebase- Authentiation, Realtime Database, Hosting ; HTML & CSS 
+- PWA App, Google Maps API, JavaScript, Firebase- Authentiation, Realtime Database, Hosting ; HTML & CSS 
+- Converted to a PWA App so that it can be easily installed on every device as an app regardless of the operating system.  
 
 ## How to start sharing or collecting to distribute?
 1. Head to [Share2Care](https://food4all-427ea.web.app/)
