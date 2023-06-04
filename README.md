@@ -19,10 +19,10 @@ Simply drop a pin on our interactive map, providing essential details such as th
 3. You can directly call the phone number to contact them. Also, use the Map icon to diretly locate them using Google Map.
 4. Now if you want to list items then click the user icon on top-right side and click login and create an account.
 5. After creating an account , click on Donate button.
-6. It will lead you to a pop-up form where you can set a marker of your location or the location you want the item to be collected from and other necessary details.
+6. It will lead you to a pop-up form where you can drop a pin of the location you want the item to be collected from and other necessary details.
 <img width="960" alt="third" src="https://github.com/The-Hackerati/Share2Care/assets/111623667/7c85a79f-6722-48e0-80b6-29954b6f26ef">
 
-7. Click Submit on the form the list the item and drop a marker on the map that gets update in realtime.
+7. Click Submit on the form.
 8. Now you can see your items are listed on the home page where al other can see it and contact you.
 
 <img width="960" alt="fourth" src="https://github.com/The-Hackerati/Share2Care/assets/111623667/5ab965f6-db83-404e-ac48-e2373ad8991f">
