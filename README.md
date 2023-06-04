@@ -1,6 +1,6 @@
 # Share2Care
 
-![Share2Care](https://github.com/The-Hackerati/Share2Care/assets/111623667/ff107978-4ab3-411c-b335-e6e2160ad24c)
+<img width="900" alt="newFirst" src="https://github.com/The-Hackerati/Share2Care/assets/111623667/0789f618-95c2-490d-9bcd-7d87217408e1">
 
 Share2Care is a platform that connects individuals who are eager to make a positive difference in their communities. By sharing not only excess food but also clothes, stationary, and more, Share2Care aims to create a sustainable future. It serves as a bridge between resource providers and those in need, facilitating the efficient distribution of items.
 
@@ -16,7 +16,6 @@ To participate in Share2Care, users can drop a pin on the interactive map provid
 ## Getting Started
 
 1. Visit [Share2Care](https://share2-care.web.app/) (Refresh the page if the Google Map does not load).
-   ![Share2Care Homepage](https://github.com/The-Hackerati/Share2Care/assets/111623667/6ae5cdad-60b9-45cc-a66b-4597cb3c1fe4)
 
 2. The map displays locations where food or other items are available for collection.
 
@@ -27,11 +26,11 @@ To participate in Share2Care, users can drop a pin on the interactive map provid
 5. After creating an account, click on the "Donate" button.
 
 6. A pop-up form will appear where you can drop a pin indicating the collection location and provide other necessary details. (Refresh the page if the Google Map does not load)
-   ![Item Donation Form](https://github.com/The-Hackerati/Share2Care/assets/111623667/7c85a79f-6722-48e0-80b6-29954b6f26ef)
+<img width="900" alt="newSecond" src="https://github.com/The-Hackerati/Share2Care/assets/111623667/6de8dd23-5f7e-4bfe-a4ad-ab24cd8a58fa">
 
 7. Click "Submit" to complete the form.
 
 8. Your listed items will be displayed on the home page, allowing others to view and contact you.
-   ![Listed Items](https://github.com/The-Hackerati/Share2Care/assets/111623667/5ab965f6-db83-404e-ac48-e2373ad8991f)
+ <img width="900" alt="newLast" src="https://github.com/The-Hackerati/Share2Care/assets/111623667/00089fa2-bf8f-474c-993b-e04f78eabea0">
 
 Thank you for contributing and helping those in need. Together, we can make a positive impact in our communities.
