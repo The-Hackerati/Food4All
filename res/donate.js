@@ -98,13 +98,13 @@ import {
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB-vWKWiTqYfYwjIIcd_1W1_BLSuibzTb4",
-    authDomain: "food4all-427ea.firebaseapp.com",
-    projectId: "food4all-427ea",
-    databaseURL: "https://food4all-427ea-default-rtdb.firebaseio.com",
-    storageBucket: "food4all-427ea.appspot.com",
-    messagingSenderId: "842713498087",
-    appId: "1:842713498087:web:3e5baf4e9a169d0a23bd42"
+    apiKey: "AIzaSyBJFHn3IUW4aw0uZ7MHZ8sV6w0Yn1sxGoU",
+    authDomain: "share2-care.firebaseapp.com",
+    databaseURL: "https://share2-care-default-rtdb.firebaseio.com",
+    projectId: "share2-care",
+    storageBucket: "share2-care.appspot.com",
+    messagingSenderId: "1067321624993",
+    appId: "1:1067321624993:web:21d3825670c60b4e16e3e0"
 };
 
 const app = initializeApp(firebaseConfig);
