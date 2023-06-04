@@ -12,7 +12,7 @@ Simply drop a pin on our interactive map, providing essential details such as th
 - Converted to a PWA App so that it can be easily installed on every device as an app regardless of the operating system.  
 
 ## How to start sharing or collecting to distribute?
-1. Head to [Share2Care](https://food4all-427ea.web.app/)  (Please refresh the page if the Google Map doesn't load)
+1. Head to [Share2Care](https://share2-care.web.app/)  (Please refresh the page if the Google Map doesn't load)
 <img width="960" alt="second" src="https://github.com/The-Hackerati/Share2Care/assets/111623667/6ae5cdad-60b9-45cc-a66b-4597cb3c1fe4">
 
 2. You can now see the places marked with a red marker where food or other items are available to collect.
