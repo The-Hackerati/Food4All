@@ -15,72 +15,105 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <!-- Custom styles for this template -->
   <link href="signup.css" rel="stylesheet">
-  </head>
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .signup-box {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .signup-box img {
+      width: 80%;
+      max-width: 400px;
+    }
+
+    .signup-box h3 {
+      margin-bottom: 2rem;
+      color: #333333;
+      font-weight: bold;
+    }
+
+    .signup-box input[type="text"] {
+      background-color: #f8f9fa;
+      border-color: #ced4da;
+      color: #495057;
+    }
+
+    .signup-box .form-check-label a {
+      color: #333333;
+    }
+
+    .signup-box .btn-primary {
+      background-color: #333333;
+      border-color: #333333;
+    }
+
+    .signup-box .btn-primary:hover {
+      background-color: #1a1a1a;
+      border-color: #1a1a1a;
+    }
+
+    .signup-box .divider {
+      border-color: #333333;
+    }
+
+    .signup-box .text-white {
+      color: #ffffff;
+    }
+  </style>
+</head>
 
 <body class="text-center">
   <section class="vh-100">
-    <!-- <div class="container-fluid h-custom" id="image"> -->
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-md-9 col-lg-6 col-xl-5">
-          <img src="https://img.freepik.com/premium-vector/volunteers-box-concept_118813-4962.jpg" alt="image" width="80%">
-        </div>
-
-        
-        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 p-5 signup-box " id="form" >
-          <form style="text-align: center;">
-            <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-            <p class="lead fw-normal mb-0 me-3"><h3 style ="margin-bottom: 2rem;">Food for All<br>  Together We End Hunger</h3></p>
-            </div>
-          
-            <!-- Name input -->
-            <div class="form-outline mb-3">
-              <input type="text" id="name" class="form-control form-control-lg"
-                placeholder="Enter your full name" />
-            </div>
-
-            <!-- Number input -->
-            <div class="form-outline mb-4">
-              <input type="text" id="number" class="form-control form-control-lg"
-                placeholder="Enter your phone number" />
-            </div>
-
-
-
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="form-check mb-0">
-                <input class="form-check-input me-2" type="checkbox" value="" id="checkbox" />
-                <label class="form-check-label" for="form2Example3">
-                  I agree to the <a href="#">Terms and Conditions.</a>
-                </label>
-              </div>
-            </div>
-
-            <div class="text-center text-lg-start mt-4 pt-2 justify-content-center d-flex">
-              <button type="button" class="btn btn-primary" id="register-button"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;" mx-auto>Register</button>
-            </div>
-            <div class="divider d-flex align-items-center my-4">
-              <p class="text-center fw-bold mx-3 mb-0">Or</p>
-            </div>
-
-            <div class="text-center text-lg-start mt-4 pt-2 justify-content-center d-flex">
-              <button type="button" class="btn btn-primary" id="login-button"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;" mx-auto>Login</button>
-            </div>
-          </form>
-        </div>
-        
-        
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="/assets/logo-trans.png" width="90%" alt="image">
       </div>
-    <!-- </div> -->
-    <!-- <div
-      class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-      <div class="text-white mb-3 mb-md-0" style="align-content: center;">
-        <p style="text-align: center;">Copyright © 2023. All rights reserved.</p>
+
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 p-5 signup-box" id="form">
+        <form style="text-align: center;">
+          <div class="d-flex flex-column align-items-center justify-content-center justify-content-lg-start">
+            <h3 class="lead fw-normal mb-0">Share2Care</h3>
+          </div>
+          <br>
+
+          <!-- Name input -->
+          <div class="form-outline mb-3">
+            <input type="text" id="name" class="form-control form-control-lg" placeholder="Enter your full name" />
+          </div>
+
+          <!-- Number input -->
+          <div class="form-outline mb-4">
+            <input type="text" id="number" class="form-control form-control-lg" placeholder="Enter your phone number" />
+          </div>
+
+          <div class="form-check mb-0">
+            <input class="form-check-input me-2" type="checkbox" value="" id="checkbox" />
+            <label class="form-check-label" for="form2Example3">
+              I agree to the <a href="#" style="color: #333333;">Terms and Conditions.</a>
+            </label>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2 justify-content-center d-flex">
+            <button type="button" class="btn btn-primary" id="register-button" style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
+          </div>
+
+          <div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0">Or</p>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2 justify-content-center d-flex">
+            <button type="button" class="btn btn-primary" id="login-button" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+          </div>
+        </form>
       </div>
-    </div> -->
+    </div>
   </section>
-
 </body>
-<script type="module" src ="signup.js"></script>
+<script type="module" src="signup.js"></script>
+
 </html>
