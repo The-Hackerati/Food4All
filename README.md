@@ -10,11 +10,13 @@ Simply drop a pin on our interactive map, providing essential details such as th
 - Converted to a PWA App so that it can be easily installed on every device as an app regardless of the operating system.  
 
 ## How to start sharing or collecting to distribute?
-1. Head to [Share2Care](https://food4all-427ea.web.app/)
+1. Head to [Share2Care](https://food4all-427ea.web.app/)<img width="960" alt="first" src="https://github.com/The-Hackerati/Share2Care/assets/111623667/a7987f64-8d8c-47fc-a18d-93b3b42baa00">
+
 2. You can now see the places marked with a red marker where food or other items are available to collect.
 3. You can directly call the phone number to contact them. Also, use the Map icon to diretly locate them using Google Map.
 4. Now if you want to list items then click the user icon on top-right side and click login and create an account.
 5. After creating an account , click on Donate button.
-6. It will lead you to a pop-up form where you can set a marker of your location or the location you want the item to be collected from and other necessary details.
+6. It will lead you to a pop-up form where you can set a marker of your location or the location you want the item to be collected from and other necessary details.<img width="960" alt="second" src="https://github.com/The-Hackerati/Share2Care/assets/111623667/e9af932d-5cab-4f99-95dd-b56f3e74618e">
+
 7. Click Submit on the form the list the item and drop a marker on the map that gets update in realtime.
 8. Now you can see your items are listed on the home page where al other can see it and contact you.
