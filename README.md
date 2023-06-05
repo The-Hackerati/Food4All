@@ -35,3 +35,15 @@ To participate in Share2Care, users can drop a pin on the interactive map provid
 ![Share2Care-3](https://github.com/The-Hackerati/Share2Care/assets/111623667/4f54f9ea-131d-4874-8a9e-79eed1627798)
 
 Thank you for contributing and helping those in need. Together, we can make a positive impact in our communities.
+
+## Contributors
+![DevSoc23](https://github.com/The-Hackerati/Share2Care/assets/111623667/54146015-d8a5-47cd-9a1c-c4dc8492d80a)
+
+This project was created by [The-Hackerati](https://github.com/The-Hackerati) team during the DevSoc'23 48-hour hackathon.
+
+The contributors to this project include:
+- [@aayushxrj](https://github.com/aayushxrj)
+- [@thecoder001](https://github.com/thecoder-001)
+- [@apurv960](https://github.com/APURV960)
+
+
